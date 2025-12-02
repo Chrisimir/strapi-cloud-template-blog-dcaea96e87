@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_news_articles",
+  "info": {
+    "displayName": "Article",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}
