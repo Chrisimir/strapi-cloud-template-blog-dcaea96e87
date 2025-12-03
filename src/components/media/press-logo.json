@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_media_press_logos",
+  "info": {
+    "displayName": "Press Logo",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "alt": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

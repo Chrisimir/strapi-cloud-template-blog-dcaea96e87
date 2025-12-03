@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_portfolio_metrics",
+  "info": {
+    "displayName": "metric",
+    "icon": "chartPie"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "sublabel": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

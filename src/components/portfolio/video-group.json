@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_portfolio_video_groups",
+  "info": {
+    "displayName": "videoGroup",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "desktop": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

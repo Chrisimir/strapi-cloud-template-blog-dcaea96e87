@@ -1,5 +1,29 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface MediaCaseImage extends Struct.ComponentSchema {
+  collectionName: 'components_media_case_images';
+  info: {
+    displayName: 'Case Image';
+    icon: 'landscape';
+  };
+  attributes: {
+    alt: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
+export interface MediaPressLogo extends Struct.ComponentSchema {
+  collectionName: 'components_media_press_logos';
+  info: {
+    displayName: 'Press Logo';
+    icon: 'landscape';
+  };
+  attributes: {
+    alt: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files'>;
+  };
+}
+
 export interface NewsArticle extends Struct.ComponentSchema {
   collectionName: 'components_news_articles';
   info: {
@@ -10,6 +34,31 @@ export interface NewsArticle extends Struct.ComponentSchema {
     href: Schema.Attribute.String & Schema.Attribute.Required;
     label: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface PortfolioMetric extends Struct.ComponentSchema {
+  collectionName: 'components_portfolio_metrics';
+  info: {
+    displayName: 'metric';
+    icon: 'chartPie';
+  };
+  attributes: {
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    sublabel: Schema.Attribute.String;
+    value: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface PortfolioVideoGroup extends Struct.ComponentSchema {
+  collectionName: 'components_portfolio_video_groups';
+  info: {
+    displayName: 'videoGroup';
+    icon: 'play';
+  };
+  attributes: {
+    desktop: Schema.Attribute.String;
+    mobile: Schema.Attribute.String;
   };
 }
 
@@ -78,7 +127,11 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'media.case-image': MediaCaseImage;
+      'media.press-logo': MediaPressLogo;
       'news.article': NewsArticle;
+      'portfolio.metric': PortfolioMetric;
+      'portfolio.video-group': PortfolioVideoGroup;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
