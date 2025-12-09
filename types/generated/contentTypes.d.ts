@@ -539,7 +539,12 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     defaultSeo: Schema.Attribute.Component<'shared.seo', false>;
     email: Schema.Attribute.Email & Schema.Attribute.Required;
     favicon: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-    footer: Schema.Attribute.Component<'shared.footer', false>;
+    footer: Schema.Attribute.Component<'shared.footer', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     instagramUrl: Schema.Attribute.String & Schema.Attribute.Required;
     linkedinUrl: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String;
