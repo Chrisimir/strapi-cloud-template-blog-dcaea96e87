@@ -672,8 +672,18 @@ export interface ApiLegalPageLegalPage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    subtitle: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
