@@ -98,7 +98,9 @@ export interface PortfolioVideoGroup extends Struct.ComponentSchema {
   };
   attributes: {
     desktop: Schema.Attribute.String;
+    desktopThumbnail: Schema.Attribute.Media<'images' | 'files'>;
     mobile: Schema.Attribute.String;
+    mobileThumbnail: Schema.Attribute.Media<'images' | 'files'>;
   };
 }
 
