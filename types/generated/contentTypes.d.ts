@@ -856,6 +856,13 @@ export interface ApiPortfolioItemPortfolioItem
       'oneToMany',
       'api::portfolio-item.portfolio-item'
     >;
+    metricasTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'Metrics'>;
     metrics: Schema.Attribute.Component<'portfolio.metric', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
