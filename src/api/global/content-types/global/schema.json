@@ -10,7 +10,11 @@
   "options": {
     "draftAndPublish": false
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "siteName": {
       "type": "string",
@@ -33,6 +37,11 @@
     "defaultSeo": {
       "type": "component",
       "component": "shared.seo",
+      "repeatable": false
+    },
+    "footer": {
+      "type": "component",
+      "component": "shared.footer",
       "repeatable": false
     },
     "linkedinUrl": {

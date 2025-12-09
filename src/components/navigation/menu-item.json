@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_navigation_menu_items",
+  "info": {
+    "displayName": "Menu item",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "sectionIndex": {
+      "type": "integer",
+      "required": false
+    },
+    "openInNewTab": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
+

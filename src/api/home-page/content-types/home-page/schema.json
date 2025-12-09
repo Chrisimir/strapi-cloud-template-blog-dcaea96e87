@@ -15,6 +15,26 @@
     }
   },
   "attributes": {
+    "valuePropositionPitch": {
+      "type": "richtext"
+    },
+    "reviewsTitleLine1": {
+      "type": "string"
+    },
+    "reviewsTitleLine2": {
+      "type": "string"
+    },
+    "reviews": {
+      "type": "component",
+      "component": "home.review",
+      "repeatable": true
+    },
+    "footer": {
+      "type": "component",
+      "component": "shared.footer",
+      "repeatable": false,
+      "required": false
+    },
     "seo": {
       "type": "component",
       "pluginOptions": {

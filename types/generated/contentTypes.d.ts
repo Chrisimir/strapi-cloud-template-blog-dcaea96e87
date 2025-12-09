@@ -527,6 +527,11 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   options: {
     draftAndPublish: false;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -534,14 +539,11 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     defaultSeo: Schema.Attribute.Component<'shared.seo', false>;
     email: Schema.Attribute.Email & Schema.Attribute.Required;
     favicon: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    footer: Schema.Attribute.Component<'shared.footer', false>;
     instagramUrl: Schema.Attribute.String & Schema.Attribute.Required;
     linkedinUrl: Schema.Attribute.String & Schema.Attribute.Required;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::global.global'
-    > &
-      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::global.global'>;
     phone: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -575,12 +577,16 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    footer: Schema.Attribute.Component<'shared.footer', false>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::home-page.home-page'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    reviews: Schema.Attribute.Component<'home.review', true>;
+    reviewsTitleLine1: Schema.Attribute.String;
+    reviewsTitleLine2: Schema.Attribute.String;
     seo: Schema.Attribute.Component<'shared.seo', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -590,6 +596,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    valuePropositionPitch: Schema.Attribute.RichText;
   };
 }
 
@@ -618,12 +625,48 @@ export interface ApiLegalPageLegalPage extends Struct.SingleTypeSchema {
       'api::legal-page.legal-page'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.Component<'legal.section', true>;
     seo: Schema.Attribute.Component<'shared.seo', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
+  collectionName: 'navigation';
+  info: {
+    displayName: 'Navigation';
+    pluralName: 'navigations';
+    singularName: 'navigation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    desktopItems: Schema.Attribute.Component<'navigation.menu-item', true>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::navigation.navigation'
+    >;
+    mobileItems: Schema.Attribute.Component<'navigation.menu-item', true>;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1422,6 +1465,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::legal-page.legal-page': ApiLegalPageLegalPage;
+      'api::navigation.navigation': ApiNavigationNavigation;
       'api::news-page.news-page': ApiNewsPageNewsPage;
       'api::portfolio-item.portfolio-item': ApiPortfolioItemPortfolioItem;
       'api::portfolio-page.portfolio-page': ApiPortfolioPagePortfolioPage;

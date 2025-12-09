@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_footers",
+  "info": {
+    "displayName": "Footer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "ctaLabel": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "legalLinkLabel": {
+      "type": "string"
+    },
+    "copyrightTemplate": {
+      "type": "string"
+    }
+  }
+}
+

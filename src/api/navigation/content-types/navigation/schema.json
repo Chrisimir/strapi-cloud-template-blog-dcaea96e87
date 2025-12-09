@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "navigation",
+  "info": {
+    "singularName": "navigation",
+    "pluralName": "navigations",
+    "displayName": "Navigation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "desktopItems": {
+      "type": "component",
+      "component": "navigation.menu-item",
+      "repeatable": true
+    },
+    "mobileItems": {
+      "type": "component",
+      "component": "navigation.menu-item",
+      "repeatable": true
+    }
+  }
+}
+

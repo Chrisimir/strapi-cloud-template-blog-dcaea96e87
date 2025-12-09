@@ -1,5 +1,31 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface HomeReview extends Struct.ComponentSchema {
+  collectionName: 'components_home_reviews';
+  info: {
+    description: '';
+    displayName: 'Review';
+  };
+  attributes: {
+    comment: Schema.Attribute.Text;
+    company: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+    project: Schema.Attribute.String;
+  };
+}
+
+export interface LegalSection extends Struct.ComponentSchema {
+  collectionName: 'components_legal_sections';
+  info: {
+    description: '';
+    displayName: 'Section';
+  };
+  attributes: {
+    body: Schema.Attribute.RichText;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface MediaCaseImage extends Struct.ComponentSchema {
   collectionName: 'components_media_case_images';
   info: {
@@ -21,6 +47,20 @@ export interface MediaPressLogo extends Struct.ComponentSchema {
   attributes: {
     alt: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files'>;
+  };
+}
+
+export interface NavigationMenuItem extends Struct.ComponentSchema {
+  collectionName: 'components_navigation_menu_items';
+  info: {
+    description: '';
+    displayName: 'Menu item';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    openInNewTab: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    sectionIndex: Schema.Attribute.Integer;
   };
 }
 
@@ -59,6 +99,21 @@ export interface PortfolioVideoGroup extends Struct.ComponentSchema {
   attributes: {
     desktop: Schema.Attribute.String;
     mobile: Schema.Attribute.String;
+  };
+}
+
+export interface SharedFooter extends Struct.ComponentSchema {
+  collectionName: 'components_shared_footers';
+  info: {
+    description: '';
+    displayName: 'Footer';
+  };
+  attributes: {
+    address: Schema.Attribute.String;
+    copyrightTemplate: Schema.Attribute.String;
+    ctaLabel: Schema.Attribute.String;
+    headline: Schema.Attribute.String;
+    legalLinkLabel: Schema.Attribute.String;
   };
 }
 
@@ -127,11 +182,15 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'home.review': HomeReview;
+      'legal.section': LegalSection;
       'media.case-image': MediaCaseImage;
       'media.press-logo': MediaPressLogo;
+      'navigation.menu-item': NavigationMenuItem;
       'news.article': NewsArticle;
       'portfolio.metric': PortfolioMetric;
       'portfolio.video-group': PortfolioVideoGroup;
+      'shared.footer': SharedFooter;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

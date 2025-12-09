@@ -15,6 +15,17 @@
     }
   },
   "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "component",
+      "component": "legal.section",
+      "repeatable": true
+    },
     "seo": {
       "type": "component",
       "pluginOptions": {
