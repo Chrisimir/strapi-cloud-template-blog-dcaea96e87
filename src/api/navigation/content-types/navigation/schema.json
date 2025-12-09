@@ -17,14 +17,23 @@
   "attributes": {
     "desktopItems": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "navigation.menu-item",
       "repeatable": true
     },
     "mobileItems": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "navigation.menu-item",
       "repeatable": true
     }
   }
 }
-

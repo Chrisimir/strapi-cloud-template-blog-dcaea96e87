@@ -23,6 +23,11 @@
     },
     "sections": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "legal.section",
       "repeatable": true
     },

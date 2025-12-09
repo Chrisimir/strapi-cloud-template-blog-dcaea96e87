@@ -536,7 +536,12 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    defaultSeo: Schema.Attribute.Component<'shared.seo', false>;
+    defaultSeo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     email: Schema.Attribute.Email & Schema.Attribute.Required;
     favicon: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     footer: Schema.Attribute.Component<'shared.footer', false> &
@@ -582,16 +587,36 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    footer: Schema.Attribute.Component<'shared.footer', false>;
+    footer: Schema.Attribute.Component<'shared.footer', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::home-page.home-page'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    reviews: Schema.Attribute.Component<'home.review', true>;
-    reviewsTitleLine1: Schema.Attribute.String;
-    reviewsTitleLine2: Schema.Attribute.String;
+    reviews: Schema.Attribute.Component<'home.review', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    reviewsTitleLine1: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    reviewsTitleLine2: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     seo: Schema.Attribute.Component<'shared.seo', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -601,7 +626,12 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    valuePropositionPitch: Schema.Attribute.RichText;
+    valuePropositionPitch: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
   };
 }
 
@@ -630,7 +660,12 @@ export interface ApiLegalPageLegalPage extends Struct.SingleTypeSchema {
       'api::legal-page.legal-page'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    sections: Schema.Attribute.Component<'legal.section', true>;
+    sections: Schema.Attribute.Component<'legal.section', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     seo: Schema.Attribute.Component<'shared.seo', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -664,13 +699,23 @@ export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    desktopItems: Schema.Attribute.Component<'navigation.menu-item', true>;
+    desktopItems: Schema.Attribute.Component<'navigation.menu-item', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::navigation.navigation'
     >;
-    mobileItems: Schema.Attribute.Component<'navigation.menu-item', true>;
+    mobileItems: Schema.Attribute.Component<'navigation.menu-item', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
