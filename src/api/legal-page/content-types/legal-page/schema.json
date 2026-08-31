@@ -4,52 +4,40 @@
   "info": {
     "singularName": "legal-page",
     "pluralName": "legal-pages",
-    "displayName": "Legal Page"
+    "displayName": "Legal Page",
+    "description": "Legal notice, privacy and cookies. Company details come from Global."
   },
-  "options": {
-    "draftAndPublish": true
-  },
-  "pluginOptions": {
-    "i18n": {
-      "localized": true
-    }
-  },
+  "options": { "draftAndPublish": true },
+  "pluginOptions": { "i18n": { "localized": true } },
   "attributes": {
-    "title": {
+    "heading": {
       "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
-    "subtitle": {
+    "identityTitle": {
       "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "identityBody": {
+      "type": "text",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "sections": {
       "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
       "component": "legal.section",
-      "repeatable": true
+      "repeatable": true,
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "seo": {
       "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
       "component": "shared.seo",
-      "repeatable": false
+      "repeatable": false,
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
     }
   }
 }

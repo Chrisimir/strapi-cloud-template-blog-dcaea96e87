@@ -5,73 +5,75 @@
     "singularName": "global",
     "pluralName": "globals",
     "displayName": "Global",
-    "description": "Define global settings"
+    "description": "Site identity, contact details and the closing band. Read by every page."
   },
-  "options": {
-    "draftAndPublish": false
-  },
-  "pluginOptions": {
-    "i18n": {
-      "localized": true
-    }
-  },
+  "options": { "draftAndPublish": false },
+  "pluginOptions": { "i18n": { "localized": true } },
   "attributes": {
     "siteName": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "shortName": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "siteDescription": {
+      "type": "text",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "phone": {
+      "type": "string",
+      "minLength": 6,
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "address": {
+      "type": "component",
+      "component": "shared.address",
+      "repeatable": false,
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "instagramUrl": {
+      "type": "string",
+      "required": true,
+      "regex": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)",
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "linkedinUrl": {
+      "type": "string",
+      "required": true,
+      "regex": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)",
+      "pluginOptions": { "i18n": { "localized": false } }
     },
     "favicon": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ]
-    },
-    "siteDescription": {
-      "type": "text",
-      "required": true
+      "allowedTypes": ["images"],
+      "pluginOptions": { "i18n": { "localized": false } }
     },
     "defaultSeo": {
       "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
       "component": "shared.seo",
-      "repeatable": false
+      "repeatable": false,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "footer": {
       "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
       "component": "shared.footer",
-      "repeatable": false
-    },
-    "linkedinUrl": {
-      "type": "string",
+      "repeatable": false,
       "required": true,
-      "regex": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)"
-    },
-    "instagramUrl": {
-      "type": "string",
-      "required": true,
-      "regex": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)"
-    },
-    "phone": {
-      "type": "string",
-      "minLength": 6,
-      "required": true
-    },
-    "email": {
-      "type": "email",
-      "required": true
+      "pluginOptions": { "i18n": { "localized": true } }
     }
   }
 }

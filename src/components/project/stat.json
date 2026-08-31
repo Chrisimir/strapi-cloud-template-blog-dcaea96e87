@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_project_stats",
+  "info": {
+    "displayName": "Stat",
+    "icon": "chartPie",
+    "description": "One figure in the KEY INFO row on a project page."
+  },
+  "options": {},
+  "attributes": {
+    "value": { "type": "string", "required": true },
+    "label": { "type": "string", "required": true }
+  }
+}

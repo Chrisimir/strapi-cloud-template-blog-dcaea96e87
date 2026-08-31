@@ -1,11 +1,11 @@
 {
   "kind": "singleType",
-  "collectionName": "home_pages",
+  "collectionName": "work_pages",
   "info": {
-    "singularName": "home-page",
-    "pluralName": "home-pages",
-    "displayName": "Home Page",
-    "description": "Title and description for the homepage. The page itself is the project carousel."
+    "singularName": "work-page",
+    "pluralName": "work-pages",
+    "displayName": "Work Page",
+    "description": "Title and description for the /work index. The grid is built from Projects."
   },
   "options": { "draftAndPublish": true },
   "pluginOptions": { "i18n": { "localized": true } },

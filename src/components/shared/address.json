@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_addresses",
+  "info": {
+    "displayName": "Address",
+    "icon": "pinMap",
+    "description": "Rendered three ways: one line in the footer, two lines on Contact, and as a schema.org PostalAddress in the homepage JSON-LD."
+  },
+  "options": {},
+  "attributes": {
+    "street": { "type": "string", "required": true },
+    "postalCode": { "type": "string", "required": true },
+    "city": { "type": "string", "required": true },
+    "country": { "type": "string", "required": true },
+    "countryCode": { "type": "string", "required": true, "maxLength": 2 },
+    "mapsUrl": { "type": "string", "required": true }
+  }
+}

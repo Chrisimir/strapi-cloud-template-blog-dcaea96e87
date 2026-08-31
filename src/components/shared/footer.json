@@ -2,25 +2,15 @@
   "collectionName": "components_shared_footers",
   "info": {
     "displayName": "Footer",
-    "description": ""
+    "icon": "layout",
+    "description": "The band that closes Home, Work, News, About and every project page."
   },
   "options": {},
   "attributes": {
-    "headline": {
-      "type": "string"
-    },
-    "ctaLabel": {
-      "type": "string"
-    },
-    "address": {
-      "type": "string"
-    },
-    "legalLinkLabel": {
-      "type": "string"
-    },
-    "copyrightTemplate": {
-      "type": "string"
-    }
+    "ctaTitle": { "type": "string", "required": true },
+    "ctaLabel": { "type": "string", "required": true },
+    "followLabel": { "type": "string", "required": true },
+    "copyright": { "type": "string", "required": true },
+    "legalLinkLabel": { "type": "string", "required": true }
   }
 }
-

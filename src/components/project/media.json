@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_project_media",
+  "info": {
+    "displayName": "Gallery item",
+    "icon": "landscape",
+    "description": "One cut or still in a project gallery. Video items need their own poster frame."
+  },
+  "options": {},
+  "attributes": {
+    "kind": {
+      "type": "enumeration",
+      "enum": ["video", "image"],
+      "default": "video",
+      "required": true
+    },
+    "file": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "videos", "files"]
+    },
+    "fileUrl": { "type": "string" },
+    "poster": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "alt": { "type": "string", "required": true }
+  }
+}
