@@ -3,7 +3,7 @@
   "info": {
     "displayName": "Gallery item",
     "icon": "landscape",
-    "description": "One cut or still in a project gallery. Video items need their own poster frame."
+    "description": "One cut or still in a project gallery. Video items need their own poster frame. Items run in list order: each full_width one is a block of its own, and any carousel ones next to each other become a single carousel in that spot. A cut can be shown on one breakpoint only, which is how a vertical cut leads the page on a phone without turning into a sliver on desktop."
   },
   "options": {},
   "attributes": {
@@ -26,6 +26,16 @@
       "required": false,
       "allowedTypes": ["images"]
     },
-    "alt": { "type": "string", "required": true }
+    "alt": { "type": "string", "required": true },
+    "placement": {
+      "type": "enumeration",
+      "enum": ["carousel", "full_width"],
+      "default": "carousel"
+    },
+    "showOn": {
+      "type": "enumeration",
+      "enum": ["both", "desktop_only", "mobile_only"],
+      "default": "both"
+    }
   }
 }
